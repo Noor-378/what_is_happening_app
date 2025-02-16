@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:what_is_happening_app/layout/news_layout.dart';
 
 void main() {
@@ -14,8 +15,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: false,
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: Colors.white,
 
+        appBarTheme: AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.white,
+            statusBarBrightness: Brightness.light,
+          ),
+          backgroundColor: Colors.white,
+          elevation: 0,
+        ),
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const NewsLayout(),
     );
