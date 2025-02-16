@@ -5,6 +5,8 @@ class SportsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("SportsScreen");
+    return const Text(
+      "SportsScreen",
+    );
   }
 }
