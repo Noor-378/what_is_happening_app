@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:what_is_happening_app/layout/home_layout.dart';
+import 'package:what_is_happening_app/layout/news_layout.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
 
       ),
-      home: const HomeLayout(),
+      home: const NewsLayout(),
     );
   }
 }
