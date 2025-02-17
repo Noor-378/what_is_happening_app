@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:what_is_happening_app/modules/business/business.dart';
 import 'package:what_is_happening_app/modules/science/science.dart';
+import 'package:what_is_happening_app/modules/settings/settings_screen.dart';
 import 'package:what_is_happening_app/modules/sports/sports.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
 
@@ -26,6 +27,9 @@ class AppCubit extends Cubit<AppStates> {
      GButton(
       icon: Icons.science_outlined,
       text: "Science",
+    ),GButton(
+      icon: Icons.settings_outlined,
+      text: "Settings",
     ),
   ];
 
@@ -33,6 +37,7 @@ class AppCubit extends Cubit<AppStates> {
     BusinessScreen(),
     SportsScreen(),
     ScienceScreen(),
+    SettingsScreen(),
   ];
 
   void changeBottomNavBar(int index) {

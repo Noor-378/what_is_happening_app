@@ -20,6 +20,14 @@ class NewsLayout extends StatelessWidget {
               title: const Text(
                 "News App",
               ),
+              actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.search,
+                  ),
+                ),
+              ],
             ),
             floatingActionButton: CustomBottomNavBar(cubit: cubit),
             body: cubit.screens[cubit.currentIndex],
