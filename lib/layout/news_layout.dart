@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:what_is_happening_app/shared/components/custom_bottom_nav_bar.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
 
@@ -20,13 +21,8 @@ class NewsLayout extends StatelessWidget {
                 "News App",
               ),
             ),
-            bottomNavigationBar: BottomNavigationBar(
-              currentIndex: cubit.currentIndex,
-              onTap: (index) {
-                cubit.changeIndex(index);
-              },
-              items: cubit.bottomItems,
-            ),
+            floatingActionButton: CustomBottomNavBar(cubit: cubit),
+            body: cubit.screens[cubit.currentIndex],
           );
         },
       ),

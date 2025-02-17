@@ -7,6 +7,7 @@ class BusinessScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Text(
       "BusinessScreen",
+      style: TextStyle(fontSize: 200, color: Colors.black),
     );
   }
 }

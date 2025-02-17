@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:what_is_happening_app/layout/news_layout.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
         scaffoldBackgroundColor: Colors.white,
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          type: BottomNavigationBarType.fixed,
+          type: BottomNavigationBarType.shifting,
+          selectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.black54,
           elevation: 0,
         ),
         appBarTheme: const AppBarTheme(
