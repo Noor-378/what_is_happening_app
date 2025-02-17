@@ -1,0 +1,2 @@
+C:/Users/Dell/Desktop/what_is_happening_app/android/app/.cxx/Debug/6q6v1c3d/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/Dell/Desktop/what_is_happening_app/android/app/.cxx/Debug/6q6v1c3d/x86_64/CMakeFiles/rebuild_cache.dir
