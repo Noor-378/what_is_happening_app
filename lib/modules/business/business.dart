@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 import 'package:what_is_happening_app/shared/components/build_article_item.dart';
 import 'package:what_is_happening_app/shared/components/custom_divider.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
@@ -20,8 +21,12 @@ class BusinessScreen extends StatelessWidget {
                 separatorBuilder: (context, index) => const CustomDivider(),
                 itemCount: 50,
               )
-            : const Center(
-                child: CircularProgressIndicator(),
+            : Center(
+                child: Lottie.asset(
+                  "assets/animations/news_loading.json",
+                  height: 500,
+                  width: 500,
+                ),
               );
       },
     );

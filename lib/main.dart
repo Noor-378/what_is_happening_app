@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:what_is_happening_app/layout/news_layout.dart';
+import 'package:what_is_happening_app/modules/splash/splash_screen.dart';
 import 'package:what_is_happening_app/shared/cubit/observer.dart';
 import 'package:what_is_happening_app/shared/network/remote/dio_helper.dart';
 import 'package:what_is_happening_app/shared/styles/dark_theme.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: lightMode,
       darkTheme: darkMode,
       themeMode: ThemeMode.light,
-      home: const NewsLayout(),
+      home: const SplashScreen(),
     );
   }
 }
