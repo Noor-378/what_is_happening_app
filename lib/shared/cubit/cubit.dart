@@ -49,7 +49,7 @@ class AppCubit extends Cubit<AppStates> {
 
   List<dynamic> business = [];
   void getBusiness() {
-    emit(LoadingState());
+    emit(GetBusinessLoadingState());
     DioHelper.getData(
       url: "v2/top-headlines",
       query: {
@@ -57,7 +57,6 @@ class AppCubit extends Cubit<AppStates> {
         "apiKey": apiKey,
       },
     ).then((value) {
-      // print(value.data["articles"][3]["title"]);
       business = value.data["articles"];
       print(business[0]["title"]);
       emit(GetBusinessSuccessState());

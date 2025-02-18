@@ -6,7 +6,7 @@ class BottomNavState extends AppStates {}
 
 class GetBusinessSuccessState extends AppStates {}
 
-class LoadingState extends AppStates {}
+class GetBusinessLoadingState extends AppStates {}
 
 class GetBusinessErrorState extends AppStates {
   final String? error;
