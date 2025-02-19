@@ -30,7 +30,6 @@ class CustomBottomNavBar extends StatelessWidget {
         ),
         child: GNav(
           gap: 3,
-          
           color: Colors.black45,
           activeColor: Colors.blue,
           tabActiveBorder: Border.all(color: Colors.blue, width: 1.5),

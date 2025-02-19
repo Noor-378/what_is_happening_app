@@ -16,7 +16,9 @@ class SplashScreen extends StatelessWidget {
             ),
           ],
         ),
-        nextScreen: NewsLayout(),
+        nextScreen: Directionality(
+          textDirection: TextDirection.ltr,
+          child: NewsLayout(),),
         backgroundColor: Colors.grey.shade200,
         splashIconSize: 500,
         duration: 3000,

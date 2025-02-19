@@ -29,7 +29,7 @@ class BuildArticleItem extends StatelessWidget {
             width: 20,
           ),
           Expanded(
-            child: Container(
+            child: SizedBox(
               height: 120,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
