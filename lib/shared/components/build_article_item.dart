@@ -40,17 +40,12 @@ class BuildArticleItem extends StatelessWidget {
                       "${article["title"] ?? nullTitle}",
                       maxLines: 4,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
                   Text(
                     "${article["publishedAt"]}",
-                    style: TextStyle(
-                      color: Colors.grey,
-                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ],
               ),

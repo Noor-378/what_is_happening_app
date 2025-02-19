@@ -21,7 +21,7 @@ class CustomBottomNavBar extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
-          color: Colors.white,
+          color: Theme.of(context).colorScheme.surface,
           boxShadow: const [
             BoxShadow(
               blurRadius: 25,
@@ -31,7 +31,7 @@ class CustomBottomNavBar extends StatelessWidget {
         child: GNav(
           gap: 3,
           color: Colors.black45,
-          activeColor: Colors.blue,
+          activeColor: Theme.of(context).colorScheme.inverseSurface,
           tabActiveBorder: Border.all(color: Colors.blue, width: 1.5),
           tabBackgroundColor: Colors.black12,
           tabBorderRadius: 25,

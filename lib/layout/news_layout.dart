@@ -15,22 +15,25 @@ class NewsLayout extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           var cubit = AppCubit.get(context);
-          return Scaffold(
-            appBar: AppBar(
-              title: const Text(
-                "News App",
-              ),
-              actions: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.search,
-                  ),
+          return SafeArea(
+            child: Scaffold(
+              appBar: AppBar(
+                title: const Text(
+                  "News App",
                 ),
-              ],
+                actions: [
+                  IconButton(
+                    onPressed: () {},
+                    icon:  Icon(
+                      Icons.search,
+                      color: Theme.of(context).colorScheme.errorContainer,
+                    ),
+                  ),
+                ],
+              ),
+              floatingActionButton: CustomBottomNavBar(cubit: cubit),
+              body: cubit.screens[cubit.currentIndex],
             ),
-            floatingActionButton: CustomBottomNavBar(cubit: cubit),
-            body: cubit.screens[cubit.currentIndex],
           );
         },
       ),

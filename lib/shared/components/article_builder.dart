@@ -12,22 +12,13 @@ class ArticleBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        children: [
-          Expanded(
-            child: ListView.separated(
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) =>
-                  BuildArticleItem(article: list[index]),
-              separatorBuilder: (context, index) =>
-                  const CustomDivider(),
-              itemCount: list.length,
-            ),
-          ),
-          SizedBox(
-            height: 100,
-          ),
-        ],
-      );
+    return ListView.separated(
+      physics: const BouncingScrollPhysics(),
+      itemBuilder: (context, index) =>
+          BuildArticleItem(article: list[index]),
+      separatorBuilder: (context, index) =>
+          const CustomDivider(),
+      itemCount: list.length,
+    );
   }
 }

@@ -2,6 +2,18 @@ import 'package:flutter/material.dart';
 
 ThemeData lightMode = ThemeData(
   useMaterial3: false,
+  textTheme: TextTheme(
+    bodyMedium: TextStyle(
+      fontSize: 18,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+    ),
+    bodySmall: TextStyle(
+      color: Colors.grey,
+      fontSize: 15,
+      fontWeight: FontWeight.bold,
+    ),
+  ),
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
     actionsIconTheme: IconThemeData(
@@ -16,5 +28,10 @@ ThemeData lightMode = ThemeData(
     backgroundColor: Colors.white,
     elevation: 0,
   ),
-  // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  colorScheme: ColorScheme.dark(
+    surface: Colors.white,
+    inverseSurface: Colors.blue,
+    error: Colors.white,
+    errorContainer: Colors.black,
+  ),
 );
