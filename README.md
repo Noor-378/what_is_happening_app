@@ -1,4 +1,4 @@
-# what_is_happening_app
+# news_app
 
 A new Flutter project.
 

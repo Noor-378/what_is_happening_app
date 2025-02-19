@@ -16,6 +16,7 @@ ThemeData lightMode = ThemeData(
   ),
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
+    titleSpacing: 20,
     actionsIconTheme: IconThemeData(
       color: Colors.black,
     ),

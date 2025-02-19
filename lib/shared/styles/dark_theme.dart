@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 ThemeData darkMode = ThemeData(
   useMaterial3: false,
+
   textTheme: TextTheme(
     bodyMedium: TextStyle(
       fontSize: 18,
@@ -16,6 +17,7 @@ ThemeData darkMode = ThemeData(
   ),
   scaffoldBackgroundColor: const Color.fromARGB(255, 60, 60, 60),
   appBarTheme: const AppBarTheme(
+    titleSpacing: 20,
     actionsIconTheme: IconThemeData(
       color: Colors.black,
     ),

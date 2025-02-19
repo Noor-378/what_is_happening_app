@@ -8,6 +8,8 @@ import 'package:what_is_happening_app/modules/sports/sports.dart';
 import 'package:what_is_happening_app/shared/components/constants.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
 import 'package:what_is_happening_app/shared/network/remote/dio_helper.dart';
+import 'package:what_is_happening_app/shared/styles/dark_theme.dart';
+import 'package:what_is_happening_app/shared/styles/light_theme.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(InitialState());
@@ -40,7 +42,7 @@ class AppCubit extends Cubit<AppStates> {
     BusinessScreen(),
     SportsScreen(),
     ScienceScreen(),
-    SettingsScreen(),
+     SettingsScreen(),
   ];
 
   void changeBottomNavBar(int index) {
@@ -54,21 +56,21 @@ class AppCubit extends Cubit<AppStates> {
   void getBusiness() {
     emit(GetBusinessLoadingState());
 
-    if(business.length == 0){
-    DioHelper.getData(
-      url: "v2/top-headlines",
-      query: {
-        "category": "business",
-        "apiKey": apiKey,
-      },
-    ).then((value) {
-      business = value.data["articles"];
-      emit(GetBusinessSuccessState());
-    }).catchError((error) {
-      print(error.toString());
-      emit(GetBusinessErrorState(error: error.toString()));
-    });
-    }else{
+    if (business.length == 0) {
+      DioHelper.getData(
+        url: "v2/top-headlines",
+        query: {
+          "category": "business",
+          "apiKey": apiKey,
+        },
+      ).then((value) {
+        business = value.data["articles"];
+        emit(GetBusinessSuccessState());
+      }).catchError((error) {
+        print(error.toString());
+        emit(GetBusinessErrorState(error: error.toString()));
+      });
+    } else {
       emit(GetBusinessSuccessState());
     }
   }
@@ -76,21 +78,21 @@ class AppCubit extends Cubit<AppStates> {
   List<dynamic> sports = [];
   void getSports() {
     emit(GetSportsLoadingState());
-    if(sports.length == 0){
-    DioHelper.getData(
-      url: "v2/top-headlines",
-      query: {
-        "category": "sports",
-        "apiKey": apiKey,
-      },
-    ).then((value) {
-      sports = value.data["articles"];
-      emit(GetSportsSuccessState());
-    }).catchError((error) {
-      print(error.toString());
-      emit(GetSportsErrorState(error: error.toString()));
-    });
-    }else{
+    if (sports.length == 0) {
+      DioHelper.getData(
+        url: "v2/top-headlines",
+        query: {
+          "category": "sports",
+          "apiKey": apiKey,
+        },
+      ).then((value) {
+        sports = value.data["articles"];
+        emit(GetSportsSuccessState());
+      }).catchError((error) {
+        print(error.toString());
+        emit(GetSportsErrorState(error: error.toString()));
+      });
+    } else {
       emit(GetSportsSuccessState());
     }
   }
@@ -99,28 +101,31 @@ class AppCubit extends Cubit<AppStates> {
   void getScience() {
     emit(GetScienceLoadingState());
 
-    if(science.length == 0){
-    DioHelper.getData(
-      url: "v2/top-headlines",
-      query: {
-        "category": "science",
-        "apiKey": apiKey,
-      },
-    ).then((value) {
-      science = value.data["articles"];
-      emit(GetScienceSuccessState());
-    }).catchError((error) {
-      print(error.toString());
-      emit(GetScienceErrorState(error: error.toString()));
-    });
-    }else{
+    if (science.length == 0) {
+      DioHelper.getData(
+        url: "v2/top-headlines",
+        query: {
+          "category": "science",
+          "apiKey": apiKey,
+        },
+      ).then((value) {
+        science = value.data["articles"];
+        emit(GetScienceSuccessState());
+      }).catchError((error) {
+        print(error.toString());
+        emit(GetScienceErrorState(error: error.toString()));
+      });
+    } else {
       emit(GetScienceSuccessState());
     }
   }
 
   bool isDark = false;
-  void changeAppMode(){
-    isDark =! isDark;
-    emit(ChangeAppMode());
+  void changeAppMode() {
+    isDark = !isDark;
+    isDark ? darkMode : lightMode;
+    emit(ChangeAppModeState());
+     
   }
+
 }
