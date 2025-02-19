@@ -117,4 +117,10 @@ class AppCubit extends Cubit<AppStates> {
       emit(GetScienceSuccessState());
     }
   }
+
+  bool isDark = false;
+  void changeAppMode(){
+    isDark =! isDark;
+    emit(ChangeAppMode());
+  }
 }

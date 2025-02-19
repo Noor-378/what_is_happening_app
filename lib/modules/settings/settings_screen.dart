@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:what_is_happening_app/shared/components/constants.dart';
+import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -69,7 +70,9 @@ class SettingsScreen extends StatelessWidget {
               height: 100,
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                AppCubit.get(context).changeAppMode();
+              },
               icon: Icon(
                 Icons.wb_sunny_outlined,
               ),
