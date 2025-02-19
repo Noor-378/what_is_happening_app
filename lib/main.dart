@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:what_is_happening_app/layout/news_layout.dart';
+import 'package:what_is_happening_app/modules/splash/splash_screen.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 import 'package:what_is_happening_app/shared/cubit/observer.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           return  MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: AppCubit.get(context).isDark ? darkMode : lightMode,
-              home: const NewsLayout(),
+              home: const SplashScreen(),
             );          
         },
       ),
