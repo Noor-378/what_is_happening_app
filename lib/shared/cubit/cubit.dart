@@ -16,7 +16,7 @@ class AppCubit extends Cubit<AppStates> {
 
   int currentIndex = 0;
 
-  List<GButton> wow = const [
+  List<GButton> bottomNavItems = [
     GButton(
       icon: Icons.business_outlined,
       text: "Business",
@@ -24,6 +24,7 @@ class AppCubit extends Cubit<AppStates> {
     GButton(
       icon: Icons.sports_football_outlined,
       text: "Sports",
+      onPressed: () {},
     ),
     GButton(
       icon: Icons.science_outlined,
@@ -35,7 +36,7 @@ class AppCubit extends Cubit<AppStates> {
     ),
   ];
 
-  List<Widget> screens = const [
+  List<Widget> screens = [
     BusinessScreen(),
     SportsScreen(),
     ScienceScreen(),
@@ -44,12 +45,16 @@ class AppCubit extends Cubit<AppStates> {
 
   void changeBottomNavBar(int index) {
     currentIndex = index;
+    if (index == 1) getSports();
+    if (index == 2) getScience();
     emit(BottomNavState());
   }
 
   List<dynamic> business = [];
   void getBusiness() {
     emit(GetBusinessLoadingState());
+
+    if(business.length == 0){
     DioHelper.getData(
       url: "v2/top-headlines",
       query: {
@@ -58,11 +63,58 @@ class AppCubit extends Cubit<AppStates> {
       },
     ).then((value) {
       business = value.data["articles"];
-      print(business[0]["title"]);
       emit(GetBusinessSuccessState());
     }).catchError((error) {
       print(error.toString());
       emit(GetBusinessErrorState(error: error.toString()));
     });
+    }else{
+      emit(GetBusinessSuccessState());
+    }
+  }
+
+  List<dynamic> sports = [];
+  void getSports() {
+    emit(GetSportsLoadingState());
+    if(sports.length == 0){
+    DioHelper.getData(
+      url: "v2/top-headlines",
+      query: {
+        "category": "sports",
+        "apiKey": apiKey,
+      },
+    ).then((value) {
+      sports = value.data["articles"];
+      emit(GetSportsSuccessState());
+    }).catchError((error) {
+      print(error.toString());
+      emit(GetSportsErrorState(error: error.toString()));
+    });
+    }else{
+      emit(GetSportsSuccessState());
+    }
+  }
+
+  List<dynamic> science = [];
+  void getScience() {
+    emit(GetScienceLoadingState());
+
+    if(science.length == 0){
+    DioHelper.getData(
+      url: "v2/top-headlines",
+      query: {
+        "category": "science",
+        "apiKey": apiKey,
+      },
+    ).then((value) {
+      science = value.data["articles"];
+      emit(GetScienceSuccessState());
+    }).catchError((error) {
+      print(error.toString());
+      emit(GetScienceErrorState(error: error.toString()));
+    });
+    }else{
+      emit(GetScienceSuccessState());
+    }
   }
 }

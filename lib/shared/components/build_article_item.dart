@@ -1,10 +1,12 @@
-
 import 'package:flutter/material.dart';
+import 'package:what_is_happening_app/shared/components/constants.dart';
 
 class BuildArticleItem extends StatelessWidget {
   const BuildArticleItem({
+    required this.article,
     super.key,
   });
+  final article;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +21,7 @@ class BuildArticleItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(
-                    "https://dims.apnews.com/dims4/default/0326f74/2147483647/strip/true/crop/2998x1686+0+109/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Ff1%2F89%2F01bca9984397477a3b194409ba48%2F1d86402c1c3b4832bd453699e7e38230"),
+                image: NetworkImage("${article["urlToImage"] ?? nullImage}"),
               ),
             ),
           ),
@@ -36,7 +37,7 @@ class BuildArticleItem extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      "title",
+                      "${article["title"] ?? nullTitle}",
                       maxLines: 4,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -46,7 +47,7 @@ class BuildArticleItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "2025-04-02T11:43:00Z",
+                    "${article["publishedAt"]}",
                     style: TextStyle(
                       color: Colors.grey,
                     ),

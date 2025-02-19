@@ -30,6 +30,7 @@ class CustomBottomNavBar extends StatelessWidget {
         ),
         child: GNav(
           gap: 3,
+          
           color: Colors.black45,
           activeColor: Colors.blue,
           tabActiveBorder: Border.all(color: Colors.blue, width: 1.5),
@@ -38,7 +39,7 @@ class CustomBottomNavBar extends StatelessWidget {
           rippleColor: Colors.lightBlue,
           duration: const Duration(milliseconds: 500),
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-          tabs: cubit.wow,
+          tabs: cubit.bottomNavItems,
           onTabChange: (index) {
             cubit.changeBottomNavBar(index);
           },

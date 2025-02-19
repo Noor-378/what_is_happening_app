@@ -13,3 +13,23 @@ class GetBusinessErrorState extends AppStates {
 
   GetBusinessErrorState({this.error});
 }
+
+
+class GetSportsSuccessState extends AppStates {}
+
+class GetSportsLoadingState extends AppStates {}
+
+class GetSportsErrorState extends AppStates {
+  final String? error;
+
+  GetSportsErrorState({this.error});
+}
+class GetScienceSuccessState extends AppStates {}
+
+class GetScienceLoadingState extends AppStates {}
+
+class GetScienceErrorState extends AppStates {
+  final String? error;
+
+  GetScienceErrorState({this.error});
+}
