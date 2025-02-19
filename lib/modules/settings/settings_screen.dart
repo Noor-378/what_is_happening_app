@@ -14,7 +14,11 @@ class SettingsScreen extends StatelessWidget {
       builder: (context, state) {
         return Center(
           child: Padding(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.only(
+              left: 35,
+              right: 35,
+              top: 30,
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -72,15 +76,25 @@ class SettingsScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 100,
+                  height: 50,
                 ),
-                IconButton(
-                  icon: Icon(
-                    Icons.add_ic_call_outlined,
-                  ),
-                  onPressed: () {
-                    AppCubit.get(context).changeAppMode();
-                  },
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Change Theme",
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        AppCubit.get(context).changeIconTheme(),
+                        color: Theme.of(context).colorScheme.errorContainer,
+                      ),
+                      onPressed: () {
+                        AppCubit.get(context).changeAppMode();
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),
