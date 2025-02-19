@@ -131,4 +131,6 @@ class AppCubit extends Cubit<AppStates> {
     isDark ? Icons.dark_mode_outlined : Icons.light_mode_outlined;
   }
 
+ 
+
 }

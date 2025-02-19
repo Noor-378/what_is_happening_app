@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:what_is_happening_app/shared/components/constants.dart';
+import 'package:what_is_happening_app/shared/components/dialog_box.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
 
@@ -53,7 +54,14 @@ class SettingsScreen extends StatelessWidget {
                   height: 25,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DialogBox();
+                      },
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(150, 35),
                     shape: RoundedRectangleBorder(
