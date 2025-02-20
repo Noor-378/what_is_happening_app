@@ -9,20 +9,26 @@ import 'package:what_is_happening_app/shared/network/remote/dio_helper.dart';
 import 'package:what_is_happening_app/shared/styles/dark_theme.dart';
 import 'package:what_is_happening_app/shared/styles/light_theme.dart';
 
-void main() {
+void main()async{
+  // if you have to make the main async you have to use this method
+  // this method make sure that all the things inside the main 
+  // completed then will run the app
+  WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
-  CacheHelper.init();
-  runApp(const MyApp());
+  await CacheHelper.init();
+  bool? isDark = CacheHelper.getBool(key: "isDark");
+  runApp(MyApp(isDark: isDark,));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.isDark});
+  final bool? isDark;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AppCubit()..getBusiness(),
+      create: (context) => AppCubit()..getBusiness()..changeAppMode(fromShared: isDark),
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {
         },

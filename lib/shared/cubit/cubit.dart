@@ -7,6 +7,7 @@ import 'package:what_is_happening_app/modules/settings/settings_screen.dart';
 import 'package:what_is_happening_app/modules/sports/sports.dart';
 import 'package:what_is_happening_app/shared/components/constants.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
+import 'package:what_is_happening_app/shared/network/local/cache_helper.dart';
 import 'package:what_is_happening_app/shared/network/remote/dio_helper.dart';
 import 'package:what_is_happening_app/shared/styles/dark_theme.dart';
 import 'package:what_is_happening_app/shared/styles/light_theme.dart';
@@ -42,7 +43,7 @@ class AppCubit extends Cubit<AppStates> {
     BusinessScreen(),
     SportsScreen(),
     ScienceScreen(),
-     SettingsScreen(),
+    SettingsScreen(),
   ];
 
   void changeBottomNavBar(int index) {
@@ -121,16 +122,21 @@ class AppCubit extends Cubit<AppStates> {
   }
 
   bool isDark = false;
-  void changeAppMode() {
-    isDark = !isDark;
+  void changeAppMode({bool? fromShared}) {
+    if(fromShared != null){
+      isDark = fromShared;
+    }else{
+      isDark = !isDark;
+    }
+    
+    CacheHelper.putBool(key: "isDark", value: isDark).then((value){
+      emit(ChangeAppModeState());
+    });
     isDark ? darkMode : lightMode;
-    emit(ChangeAppModeState());
-     
-  }
-  IconData changeIconTheme(){return
-    isDark ? Icons.dark_mode_outlined : Icons.light_mode_outlined;
+    
   }
 
- 
-
+  IconData changeIconTheme() {
+    return isDark ? Icons.dark_mode_outlined : Icons.light_mode_outlined;
+  }
 }
