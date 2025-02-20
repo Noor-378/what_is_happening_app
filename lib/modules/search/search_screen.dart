@@ -31,20 +31,17 @@ class SearchScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: TextFormField(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.labelMedium,
                     focusNode: focusNode,
+                    autofocus: true,
                     controller: searchController,
                     keyboardType: TextInputType.text,
                     cursorColor: Colors.blue,
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "search must not be empty";
-                      } else {
-                        return null;
-                      }
-                    },
+                    
                     onChanged: (value) {},
                     decoration: InputDecoration(
+                      
                       hintText: "Search",
                       hintStyle: TextStyle(
                         color: Colors.grey,
@@ -57,15 +54,14 @@ class SearchScreen extends StatelessWidget {
                         context,
                         Colors.blue,
                       ),
-                      prefixIconColor:
-                          focusNode.hasFocus ? Colors.blue : Colors.grey,
+                      prefixIconColor: Colors.blue,
                       labelText: "Search",
                       floatingLabelStyle: TextStyle(
                         color: Colors.blue,
                       ),
                       prefixIcon: Icon(
                         Icons.search,
-                        color: AppCubit.get(context).changeColor(focusNode),
+                        color: Colors.grey,
                       ),
                     ),
                   ),

@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 ThemeData lightMode = ThemeData(
   useMaterial3: false,
   textTheme: TextTheme(
+    labelMedium: TextStyle(
+      color: Colors.black,
+      fontSize: 20,
+    ),
     bodyMedium: TextStyle(
       fontSize: 18,
       color: Colors.black,

@@ -4,6 +4,10 @@ ThemeData darkMode = ThemeData(
   useMaterial3: false,
   
   textTheme: TextTheme(
+    labelMedium: TextStyle(
+      color: Colors.white,
+      fontSize: 20,
+    ),
     bodyMedium: TextStyle(
       fontSize: 18,
       color: Colors.white,

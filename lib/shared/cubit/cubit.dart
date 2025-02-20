@@ -146,9 +146,5 @@ class AppCubit extends Cubit<AppStates> {
           builder: (context) => Widget,
         ),
       );
-      Color changeColor(FocusNode focusNode){
-       return focusNode.hasFocus?Colors.blue : Colors.grey;
-
-
-      }
+     
 }
