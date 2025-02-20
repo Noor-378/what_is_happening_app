@@ -4,6 +4,7 @@ import 'package:what_is_happening_app/modules/splash/splash_screen.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 import 'package:what_is_happening_app/shared/cubit/observer.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
+import 'package:what_is_happening_app/shared/network/local/cache_helper.dart';
 import 'package:what_is_happening_app/shared/network/remote/dio_helper.dart';
 import 'package:what_is_happening_app/shared/styles/dark_theme.dart';
 import 'package:what_is_happening_app/shared/styles/light_theme.dart';
@@ -11,6 +12,7 @@ import 'package:what_is_happening_app/shared/styles/light_theme.dart';
 void main() {
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
+  CacheHelper.init();
   runApp(const MyApp());
 }
 
