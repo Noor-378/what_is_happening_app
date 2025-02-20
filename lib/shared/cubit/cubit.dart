@@ -123,20 +123,32 @@ class AppCubit extends Cubit<AppStates> {
 
   bool isDark = false;
   void changeAppMode({bool? fromShared}) {
-    if(fromShared != null){
+    if (fromShared != null) {
       isDark = fromShared;
-    }else{
-      isDark = !isDark;
-    }
-    
-    CacheHelper.putBool(key: "isDark", value: isDark).then((value){
       emit(ChangeAppModeState());
-    });
+    } else {
+      isDark = !isDark;
+      CacheHelper.putBool(key: "isDark", value: isDark).then((value) {
+        emit(ChangeAppModeState());
+      });
+    }
+
     isDark ? darkMode : lightMode;
-    
   }
 
   IconData changeIconTheme() {
     return isDark ? Icons.dark_mode_outlined : Icons.light_mode_outlined;
   }
+
+  void navigateTo(context, Widget) => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Widget,
+        ),
+      );
+      Color changeColor(FocusNode focusNode){
+       return focusNode.hasFocus?Colors.blue : Colors.grey;
+
+
+      }
 }

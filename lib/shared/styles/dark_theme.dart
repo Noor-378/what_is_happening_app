@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 
 ThemeData darkMode = ThemeData(
   useMaterial3: false,
-
+  
   textTheme: TextTheme(
     bodyMedium: TextStyle(
       fontSize: 18,
       color: Colors.white,
       fontWeight: FontWeight.bold,
     ),
-    bodySmall: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.bold,),
+    bodySmall: TextStyle(
+      color: Colors.grey,
+      fontSize: 15,
+      fontWeight: FontWeight.bold,
+    ),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(

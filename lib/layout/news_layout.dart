@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:what_is_happening_app/modules/search/search_screen.dart';
 import 'package:what_is_happening_app/shared/components/custom_bottom_nav_bar.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
@@ -14,7 +15,6 @@ class NewsLayout extends StatelessWidget {
       builder: (context, state) {
         var cubit = AppCubit.get(context);
 
-
         return SafeArea(
           child: Scaffold(
             appBar: AppBar(
@@ -22,10 +22,14 @@ class NewsLayout extends StatelessWidget {
                 "News App",
               ),
               actions: [
-                
                 IconButton(
-                  onPressed: () {},
-                  icon:  Icon(
+                  onPressed: () {
+                    cubit.navigateTo(
+                      context,
+                      SearchScreen(),
+                    );
+                  },
+                  icon: Icon(
                     Icons.search,
                     color: Theme.of(context).colorScheme.errorContainer,
                   ),

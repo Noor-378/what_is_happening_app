@@ -9,16 +9,18 @@ import 'package:what_is_happening_app/shared/network/remote/dio_helper.dart';
 import 'package:what_is_happening_app/shared/styles/dark_theme.dart';
 import 'package:what_is_happening_app/shared/styles/light_theme.dart';
 
-void main()async{
+void main() async {
   // if you have to make the main async you have to use this method
-  // this method make sure that all the things inside the main 
+  // this method make sure that all the things inside the main
   // completed then will run the app
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
   await CacheHelper.init();
   bool? isDark = CacheHelper.getBool(key: "isDark");
-  runApp(MyApp(isDark: isDark,));
+  runApp(MyApp(
+    isDark: isDark,
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -28,16 +30,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AppCubit()..getBusiness()..changeAppMode(fromShared: isDark),
+      create: (context) => AppCubit()
+        ..getBusiness()
+        ..changeAppMode(fromShared: isDark),
       child: BlocConsumer<AppCubit, AppStates>(
-        listener: (context, state) {
-        },
+        listener: (context, state) {},
         builder: (context, state) {
-          return  MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: AppCubit.get(context).isDark ? darkMode : lightMode,
-              home: const SplashScreen(),
-            );          
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: AppCubit.get(context).isDark ? darkMode : lightMode,
+            home: const SplashScreen(),
+          );
         },
       ),
     );
