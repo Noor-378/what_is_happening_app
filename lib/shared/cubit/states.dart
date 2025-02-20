@@ -32,6 +32,14 @@ class GetScienceErrorState extends AppStates {
   final String? error;
 
   GetScienceErrorState({this.error});
+}class GetSearchSuccessState extends AppStates {}
+
+class GetSearchLoadingState extends AppStates {}
+
+class GetSearchErrorState extends AppStates {
+  final String? error;
+
+  GetSearchErrorState({this.error});
 }
 
 class ChangeAppModeState extends AppStates{}

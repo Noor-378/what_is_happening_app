@@ -54,6 +54,7 @@ class AppCubit extends Cubit<AppStates> {
   }
 
   List<dynamic> business = [];
+
   void getBusiness() {
     emit(GetBusinessLoadingState());
 
@@ -121,6 +122,29 @@ class AppCubit extends Cubit<AppStates> {
     }
   }
 
+  List<dynamic> search = [];
+  void getSearch(String value) {
+    emit(GetSearchLoadingState());
+
+    DioHelper.getData(
+      url: "v2/everything",
+      query: {
+        "q": "$value",
+        "api": "$apiKey",
+      },
+    ).then((value) {
+      search = value.data["articles"];
+      emit(GetSearchSuccessState());
+    }).catchError((error) {
+      print("==================${error.toString()}===============");
+      emit(
+        GetSearchErrorState(
+          error: error.toString(),
+        ),
+      );
+    });
+  }
+
   bool isDark = false;
   void changeAppMode({bool? fromShared}) {
     if (fromShared != null) {
@@ -146,5 +170,4 @@ class AppCubit extends Cubit<AppStates> {
           builder: (context) => Widget,
         ),
       );
-     
 }

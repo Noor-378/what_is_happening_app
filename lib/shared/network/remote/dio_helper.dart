@@ -4,7 +4,9 @@ import 'package:what_is_happening_app/shared/components/constants.dart';
 class DioHelper {
   static late Dio dio;
   static init() {
+    
     dio = Dio(
+      
       BaseOptions(
         baseUrl: baseUrl,
         receiveDataWhenStatusError: true,

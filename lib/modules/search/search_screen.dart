@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:what_is_happening_app/shared/components/article_builder.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
 
@@ -15,6 +16,7 @@ class SearchScreen extends StatelessWidget {
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
         builder: (context, state) {
+          var list = AppCubit.get(context).search;
           return Scaffold(
             appBar: AppBar(
               leading: IconButton(
@@ -39,7 +41,9 @@ class SearchScreen extends StatelessWidget {
                     keyboardType: TextInputType.text,
                     cursorColor: Colors.blue,
                     
-                    onChanged: (value) {},
+                    onChanged: (value){
+                      AppCubit.get(context).getSearch(value);
+                    },
                     decoration: InputDecoration(
                       
                       hintText: "Search",
@@ -66,6 +70,7 @@ class SearchScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                Expanded(child: ArticleBuilder(list: list))
               ],
             ),
           );

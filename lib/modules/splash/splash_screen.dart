@@ -10,12 +10,14 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       
-        splash: Column(
-          children: [
-            Center(
-              child: Lottie.asset("assets/animations/News_Animation.json"),
-            ),
-          ],
+        splash: SafeArea(
+          child: Column(
+            children: [
+              Center(
+                child: Lottie.asset("assets/animations/News_Animation.json"),
+              ),
+            ],
+          ),
         ),
         nextScreen: NewsLayout(),
         backgroundColor: Colors.grey.shade200,
