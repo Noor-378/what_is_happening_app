@@ -130,7 +130,7 @@ class AppCubit extends Cubit<AppStates> {
       url: "v2/everything",
       query: {
         "q": "$value",
-        "api": "$apiKey",
+        "apiKey": "$apiKey",
       },
     ).then((value) {
       search = value.data["articles"];
