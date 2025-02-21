@@ -41,7 +41,6 @@ class SearchScreen extends StatelessWidget {
                     autofocus: true,
                     controller: searchController,
                     keyboardType: TextInputType.text,
-                    cursorColor: Colors.blue,
                     onChanged: (value) {
                       AppCubit.get(context).getSearch(value);
                     },
