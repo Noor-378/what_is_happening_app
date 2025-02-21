@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 import 'package:what_is_happening_app/modules/business/business.dart';
 import 'package:what_is_happening_app/modules/science/science.dart';
 import 'package:what_is_happening_app/modules/settings/settings_screen.dart';
@@ -170,4 +171,8 @@ class AppCubit extends Cubit<AppStates> {
           builder: (context) => Widget,
         ),
       );
+
+      void webView(String url,controller){ controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.disabled)
+      ..loadRequest(Uri.parse(url));}
 }
