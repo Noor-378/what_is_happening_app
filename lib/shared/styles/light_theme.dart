@@ -6,7 +6,6 @@ ThemeData lightMode = ThemeData(
     selectionHandleColor: Colors.blue,
     selectionColor: Colors.blue,
     cursorColor: Colors.blue,
-
   ),
   textTheme: TextTheme(
     labelMedium: TextStyle(

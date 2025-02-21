@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 
 ThemeData darkMode = ThemeData(
   useMaterial3: false,
-
   textSelectionTheme: TextSelectionThemeData(
     selectionHandleColor: Colors.blue,
     selectionColor: Colors.blue,
     cursorColor: Colors.blue,
-
   ),
-  
   textTheme: TextTheme(
     labelMedium: TextStyle(
       color: Colors.white,

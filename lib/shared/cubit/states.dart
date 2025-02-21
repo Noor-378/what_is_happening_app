@@ -14,7 +14,6 @@ class GetBusinessErrorState extends AppStates {
   GetBusinessErrorState({this.error});
 }
 
-
 class GetSportsSuccessState extends AppStates {}
 
 class GetSportsLoadingState extends AppStates {}
@@ -24,6 +23,7 @@ class GetSportsErrorState extends AppStates {
 
   GetSportsErrorState({this.error});
 }
+
 class GetScienceSuccessState extends AppStates {}
 
 class GetScienceLoadingState extends AppStates {}
@@ -32,7 +32,9 @@ class GetScienceErrorState extends AppStates {
   final String? error;
 
   GetScienceErrorState({this.error});
-}class GetSearchSuccessState extends AppStates {}
+}
+
+class GetSearchSuccessState extends AppStates {}
 
 class GetSearchLoadingState extends AppStates {}
 
@@ -42,5 +44,6 @@ class GetSearchErrorState extends AppStates {
   GetSearchErrorState({this.error});
 }
 
-class ChangeAppModeState extends AppStates{}
-class wow extends AppStates{}
+class ChangeAppModeState extends AppStates {}
+
+class wow extends AppStates {}

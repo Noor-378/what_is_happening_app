@@ -35,7 +35,6 @@ class SearchScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: TextField(
-                    
                     style: Theme.of(context).textTheme.labelMedium,
                     focusNode: focusNode,
                     autofocus: true,
@@ -45,7 +44,6 @@ class SearchScreen extends StatelessWidget {
                       AppCubit.get(context).getSearch(value);
                     },
                     decoration: InputDecoration(
-                      
                       hintText: "Search",
                       hintStyle: TextStyle(
                         color: Colors.grey,
