@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:what_is_happening_app/shared/components/article_builder.dart';
+import 'package:what_is_happening_app/shared/components/loading_animation.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
 
@@ -34,14 +35,14 @@ class SearchScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: TextField(
+                    
                     style: Theme.of(context).textTheme.labelMedium,
                     focusNode: focusNode,
                     autofocus: true,
                     controller: searchController,
                     keyboardType: TextInputType.text,
                     cursorColor: Colors.blue,
-                    
-                    onChanged: (value){
+                    onChanged: (value) {
                       AppCubit.get(context).getSearch(value);
                     },
                     decoration: InputDecoration(
@@ -70,7 +71,9 @@ class SearchScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Expanded(child: ArticleBuilder(list: list))
+                list.length == 0
+                    ? Expanded(child: LoadingAnimation())
+                    : Expanded(child: ArticleBuilder(list: list))
               ],
             ),
           );
