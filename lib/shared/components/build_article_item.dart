@@ -17,54 +17,58 @@ class BuildArticleItem extends StatelessWidget {
     return BlocConsumer<AppCubit, AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        return InkWell(
-          onTap: () {
-            AppCubit.get(context)
-                .navigateTo(context, WebViewScreen(url: article["url"]));
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              children: [
-                Container(
-                  height: 120,
-                  width: 120,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image:
-                          NetworkImage("${article["urlToImage"] ?? nullImage}"),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Expanded(
-                  child: SizedBox(
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(25),
+            onTap: () {
+              AppCubit.get(context)
+                  .navigateTo(context, WebViewScreen(url: article["url"]));
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              child: Row(
+                children: [
+                  Container(
                     height: 120,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            "${article["title"] ?? nullTitle}",
-                            maxLines: 4,
-                            overflow: TextOverflow.ellipsis,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                        ),
-                        Text(
-                          "${article["publishedAt"]}",
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                      ],
+                    width: 120,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                            "${article["urlToImage"] ?? nullImage}"),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      height: 120,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              "${article["title"] ?? nullTitle}",
+                              maxLines: 4,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ),
+                          Text(
+                            "${article["publishedAt"]}",
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
