@@ -130,8 +130,8 @@ class AppCubit extends Cubit<AppStates> {
     DioHelper.getData(
       url: "v2/everything",
       query: {
-        "q": "$value",
-        "apiKey": "$apiKey",
+        "q": value,
+        "apiKey": apiKey,
       },
     ).then((value) {
       search = value.data["articles"];
