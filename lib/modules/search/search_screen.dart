@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:what_is_happening_app/shared/components/article_builder.dart';
-import 'package:what_is_happening_app/shared/components/default_text_form_feild.dart';
+import 'package:what_is_happening_app/shared/components/default_text_form_field.dart';
 import 'package:what_is_happening_app/shared/components/loading_animation.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
