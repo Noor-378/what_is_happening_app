@@ -46,4 +46,4 @@ class GetSearchErrorState extends AppStates {
 
 class ChangeAppModeState extends AppStates {}
 
-class wow extends AppStates {}
+class WebViewState extends AppStates {}

@@ -172,7 +172,10 @@ class AppCubit extends Cubit<AppStates> {
         ),
       );
 
-      void webView(String url,controller){ controller = WebViewController()
+  void webView(String url, WebViewController controller) {
+    controller
       ..setJavaScriptMode(JavaScriptMode.disabled)
-      ..loadRequest(Uri.parse(url));}
+      ..loadRequest(Uri.parse(url));
+    emit(WebViewState());
+  }
 }

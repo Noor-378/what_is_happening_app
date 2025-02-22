@@ -17,12 +17,13 @@ class BuildArticleItem extends StatelessWidget {
     return BlocConsumer<AppCubit, AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        return Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: GestureDetector(
-            onTap: () {
-              AppCubit.get(context).navigateTo(context, WebViewScreen(url: article["url"]));
-            },
+        return InkWell(
+          onTap: () {
+            AppCubit.get(context)
+                .navigateTo(context, WebViewScreen(url: article["url"]));
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
             child: Row(
               children: [
                 Container(
