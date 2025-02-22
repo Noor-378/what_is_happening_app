@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:what_is_happening_app/shared/components/constants.dart';
+import 'package:what_is_happening_app/shared/components/custom_elevated_button.dart';
 import 'package:what_is_happening_app/shared/components/dialog_box.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
@@ -53,7 +54,10 @@ class SettingsScreen extends StatelessWidget {
                 SizedBox(
                   height: 25,
                 ),
-                ElevatedButton(
+                CustomElevatedButton(
+                  width: 150,
+                  height: 35,
+                  text: "Edit Profile",
                   onPressed: () {
                     showDialog(
                       context: context,
@@ -62,26 +66,6 @@ class SettingsScreen extends StatelessWidget {
                       },
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: Size(150, 35),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    elevation: 15,
-                    side: BorderSide(
-                      color: Colors.blue,
-                      width: 2,
-                    ),
-                    backgroundColor: Theme.of(context).colorScheme.error,
-                  ),
-                  child: const Text(
-                    "Edit Profile",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 17,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
                 ),
                 SizedBox(
                   height: 50,

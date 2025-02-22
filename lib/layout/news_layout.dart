@@ -17,6 +17,7 @@ class NewsLayout extends StatelessWidget {
 
         return SafeArea(
           child: Scaffold(
+            
             appBar: AppBar(
               title: const Text(
                 "News App",

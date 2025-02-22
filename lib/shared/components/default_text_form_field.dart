@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 
 class DefaultTextFormField extends StatelessWidget {
   const DefaultTextFormField({
@@ -37,6 +36,9 @@ class DefaultTextFormField extends StatelessWidget {
         focusedBorder: borderForTextFormField(
           context,
           Colors.blue,
+        ),
+        labelStyle: TextStyle(
+          color: Colors.grey,
         ),
         prefixIconColor: Colors.blue,
         labelText: label,

@@ -8,6 +8,7 @@ ThemeData lightMode = ThemeData(
     cursorColor: Colors.blue,
   ),
   textTheme: TextTheme(
+    
     labelMedium: TextStyle(
       color: Colors.black,
       fontSize: 20,
