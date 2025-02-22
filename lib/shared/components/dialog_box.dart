@@ -16,7 +16,8 @@ class DialogBox extends StatelessWidget {
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(25),
       ),
-      child: Container(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      child:  Container(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 40),
         child: SingleChildScrollView(
           child: Column(
@@ -73,7 +74,6 @@ class DialogBox extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     );
   }
 }
