@@ -4,7 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:what_is_happening_app/modules/business/business.dart';
 import 'package:what_is_happening_app/modules/science/science.dart';
-import 'package:what_is_happening_app/modules/settings/settings_screen.dart';
+import 'package:what_is_happening_app/modules/profile/profile_screen.dart';
 import 'package:what_is_happening_app/modules/sports/sports.dart';
 import 'package:what_is_happening_app/shared/components/constants.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
@@ -35,8 +35,8 @@ class AppCubit extends Cubit<AppStates> {
       text: "Science",
     ),
     GButton(
-      icon: Icons.settings_outlined,
-      text: "Settings",
+      icon: Icons.person_outline_rounded,
+      text: "Profile",
     ),
   ];
 
