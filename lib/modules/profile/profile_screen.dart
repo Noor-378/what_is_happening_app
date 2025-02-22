@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:what_is_happening_app/model/user_preferences.dart';
 import 'package:what_is_happening_app/shared/components/constants.dart';
 import 'package:what_is_happening_app/shared/components/custom_elevated_button.dart';
 import 'package:what_is_happening_app/shared/components/dialog_box.dart';
 import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 import 'package:what_is_happening_app/shared/cubit/states.dart';
 
-class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AppCubit, AppStates>(
+      
       listener: (context, state) {},
       builder: (context, state) {
+        
         return Center(
           child: Padding(
             padding: const EdgeInsets.only(
@@ -34,7 +38,8 @@ class SettingsScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Text(
-                  "Noor Alawawdeh",
+                //  UserPreferences.myUser.name,
+                "Noor Alawawdeh",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -44,7 +49,8 @@ class SettingsScreen extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  "test@gmail.com",
+                //  UserPreferences.myUser.email,
+                "gmail@gmail.com",
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w900,
@@ -71,23 +77,22 @@ class SettingsScreen extends StatelessWidget {
                   height: 50,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Change Theme",
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        AppCubit.get(context).changeIconTheme(),
-                        color: Theme.of(context).colorScheme.errorContainer,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Change Theme",
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
-                      onPressed: () {
-                        AppCubit.get(context).changeAppMode();
-                      },
-                    ),
-                  ],
-                ),
+                      IconButton(
+                        icon: Icon(
+                          AppCubit.get(context).changeIconTheme(),
+                          color: Theme.of(context).colorScheme.errorContainer,
+                        ),
+                        onPressed: () {
+                          AppCubit.get(context).changeAppMode();
+                        },
+                      )
+                    ]),
               ],
             ),
           ),

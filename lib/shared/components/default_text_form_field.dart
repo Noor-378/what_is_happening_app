@@ -9,6 +9,7 @@ class DefaultTextFormField extends StatelessWidget {
     required this.prefixIcon,
     this.autoFocuse = false,
     required this.controller,
+    this.textInputType = TextInputType.text,
   });
   final TextEditingController controller;
   final String hint;
@@ -16,13 +17,14 @@ class DefaultTextFormField extends StatelessWidget {
   final String label;
   final IconData prefixIcon;
   final bool autoFocuse;
+  final TextInputType textInputType;
   @override
   Widget build(BuildContext context) {
     return TextField(
       style: Theme.of(context).textTheme.labelMedium,
       autofocus: autoFocuse,
       controller: controller,
-      keyboardType: TextInputType.text,
+      keyboardType: textInputType,
       onChanged: onChanged,
       decoration: InputDecoration(
         hintText: hint,

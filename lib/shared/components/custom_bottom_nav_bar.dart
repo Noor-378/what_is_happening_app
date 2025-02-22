@@ -40,6 +40,7 @@ class CustomBottomNavBar extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
           tabs: cubit.bottomNavItems,
           onTabChange: (index) {
+            
             cubit.changeBottomNavBar(index);
           },
         ),

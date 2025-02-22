@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:what_is_happening_app/model/user_preferences.dart';
 import 'package:what_is_happening_app/shared/components/constants.dart';
 import 'package:what_is_happening_app/shared/components/custom_elevated_button.dart';
 import 'package:what_is_happening_app/shared/components/default_text_form_field.dart';
+import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 
 class DialogBox extends StatelessWidget {
   // const
@@ -44,6 +46,7 @@ class DialogBox extends StatelessWidget {
               DefaultTextFormField(
                 hint: "Enter You'r Email",
                 label: "Email",
+                textInputType: TextInputType.emailAddress,
                 prefixIcon: Icons.person_outline_rounded,
                 controller: emailController,
               ),
@@ -65,7 +68,9 @@ class DialogBox extends StatelessWidget {
                       width: 100,
                       height: 35,
                       text: "Save",
-                      onPressed: () {},
+                      onPressed: () {
+                      // AppCubit.get(context).updateProfile(nameController,emailController,context);
+                      },
                     ),
                   ],
                 ),
