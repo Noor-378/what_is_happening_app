@@ -34,13 +34,13 @@ class SearchScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: DefaultTextFormField(
+                    controller: searchController,
                     hint: "Search",
                     onChanged: (value) {
                       AppCubit.get(context).getSearch(value);
                     },
                     label: "Search",
                     prefixIcon: Icons.search,
-                    controller: searchController,
                     autoFocuse: true,
                   ),
                 ),
