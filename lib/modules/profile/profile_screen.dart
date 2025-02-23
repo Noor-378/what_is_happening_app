@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:what_is_happening_app/model/user_preferences.dart';
 import 'package:what_is_happening_app/shared/components/constants.dart';
 import 'package:what_is_happening_app/shared/components/custom_elevated_button.dart';
 import 'package:what_is_happening_app/shared/components/dialog_box.dart';

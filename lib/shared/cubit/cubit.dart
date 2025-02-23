@@ -165,10 +165,10 @@ class AppCubit extends Cubit<AppStates> {
     return isDark ? Icons.dark_mode_outlined : Icons.light_mode_outlined;
   }
 
-  void navigateTo(context, Widget) => Navigator.push(
+  void navigateTo(context,Widget widget) => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => Widget,
+          builder: (context) => widget,
         ),
       );
 
