@@ -9,13 +9,18 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
+      splashTransition: SplashTransition.fadeTransition,
       splash: SafeArea(
-        child: Column(
-          children: [
-            Center(
-              child: Lottie.asset("assets/animations/News_Animation.json"),
-            ),
-          ],
+        child: Expanded(
+          child: Column(
+            children: [
+              Center(
+                child: Lottie.asset(
+                  "assets/animations/News_Animation.json",
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       nextScreen: NewsLayout(),

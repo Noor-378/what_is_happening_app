@@ -9,15 +9,12 @@ import 'package:what_is_happening_app/shared/cubit/states.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
-  
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AppCubit, AppStates>(
-      
       listener: (context, state) {},
       builder: (context, state) {
-        
         return Center(
           child: Padding(
             padding: const EdgeInsets.only(
@@ -38,8 +35,8 @@ class ProfileScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Text(
-                //  UserPreferences.myUser.name,
-                "Noor Alawawdeh",
+                  //  UserPreferences.myUser.name,
+                  "Noor Alawawdeh",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -49,8 +46,8 @@ class ProfileScreen extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                //  UserPreferences.myUser.email,
-                "gmail@gmail.com",
+                  //  UserPreferences.myUser.email,
+                  "gmail@gmail.com",
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w900,
@@ -77,22 +74,23 @@ class ProfileScreen extends StatelessWidget {
                   height: 50,
                 ),
                 Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Change Theme",
-                        style: Theme.of(context).textTheme.bodyMedium,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Change Theme",
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        AppCubit.get(context).changeIconTheme(),
+                        color: Theme.of(context).colorScheme.errorContainer,
                       ),
-                      IconButton(
-                        icon: Icon(
-                          AppCubit.get(context).changeIconTheme(),
-                          color: Theme.of(context).colorScheme.errorContainer,
-                        ),
-                        onPressed: () {
-                          AppCubit.get(context).changeAppMode();
-                        },
-                      )
-                    ]),
+                      onPressed: () {
+                        AppCubit.get(context).changeAppMode();
+                      },
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
