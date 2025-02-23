@@ -1,6 +1,6 @@
 # news_app
 
-A new Flutter project.
+What's happening? It is an application that provides a quick and user-friendly interface to give you access to all the news you want to see from around the world.
 
 ## Getting Started
 
