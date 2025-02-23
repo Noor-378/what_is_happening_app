@@ -37,14 +37,16 @@ class SearchScreen extends StatelessWidget {
                     /*controller: searchController*/ hint: "Search",
                     onChanged: (value) {
                       AppCubit.get(context).getSearch(value);
-                    },label: "Search",prefixIcon: Icons.search,
+                    },
+                    label: "Search",
+                    prefixIcon: Icons.search,
                     controller: searchController,
                     autoFocuse: true,
                   ),
                 ),
                 list.length == 0
                     ? Expanded(child: LoadingAnimation())
-                    : Expanded(child: ArticleBuilder(list: list))
+                    : Expanded(child: ArticleBuilder(list: list)),
               ],
             ),
           );

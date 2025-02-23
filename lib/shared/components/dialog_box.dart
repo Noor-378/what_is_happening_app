@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:what_is_happening_app/model/user_preferences.dart';
 import 'package:what_is_happening_app/shared/components/constants.dart';
 import 'package:what_is_happening_app/shared/components/custom_elevated_button.dart';
 import 'package:what_is_happening_app/shared/components/default_text_form_field.dart';
-import 'package:what_is_happening_app/shared/cubit/cubit.dart';
 
 class DialogBox extends StatelessWidget {
   // const
@@ -19,17 +17,38 @@ class DialogBox extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
       ),
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      child:  Container(
+      child: Container(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 40),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CircleAvatar(
-                backgroundImage: NetworkImage(
-                  profileImage,
-                ),
-                radius: 40,
+              Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      profileImage,
+                    ),
+                    radius: 40,
+                  ),
+                  CircleAvatar(
+                    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                    radius: 14.3,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 1.5, right: 1.3),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.blue,
+                      radius: 12,
+                      child: Icon(
+                        Icons.edit,
+                        color: Colors.black,
+                        size: 20,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 40,
@@ -47,7 +66,7 @@ class DialogBox extends StatelessWidget {
                 hint: "Enter You'r Email",
                 label: "Email",
                 textInputType: TextInputType.emailAddress,
-                prefixIcon: Icons.person_outline_rounded,
+                prefixIcon: Icons.email_outlined,
                 controller: emailController,
               ),
               SizedBox(
@@ -68,9 +87,7 @@ class DialogBox extends StatelessWidget {
                       width: 100,
                       height: 35,
                       text: "Save",
-                      onPressed: () {
-                      // AppCubit.get(context).updateProfile(nameController,emailController,context);
-                      },
+                      onPressed: () {},
                     ),
                   ],
                 ),

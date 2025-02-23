@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:what_is_happening_app/model/user_preferences.dart';
 import 'package:what_is_happening_app/modules/business/business.dart';
 import 'package:what_is_happening_app/modules/science/science.dart';
 import 'package:what_is_happening_app/modules/profile/profile_screen.dart';
@@ -186,4 +185,5 @@ class AppCubit extends Cubit<AppStates> {
   //   UserPreferences.myUser.name = emailController.text;
   //   Navigator.pop(context);
   // }
+   
 }
