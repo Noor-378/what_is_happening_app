@@ -35,16 +35,24 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0
+  flutter_launcher_icons: ^0.14.3
   google_nav_bar: ^5.0.7
   lottie: 3.2.0
   shared_preferences: ^2.5.2
   webview_flutter: ^4.10.0
-  
+
 dev_dependencies:
-  flutter_launcher_icons: ^0.14.3
   flutter_lints: ^5.0.0
+
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.3
+  
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/news_app_icon.png"
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
