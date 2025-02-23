@@ -43,7 +43,7 @@ class DialogBox extends StatelessWidget {
                       radius: 12,
                       child: Icon(
                         Icons.edit,
-                        color: Colors.black,
+                        color: Theme.of(context).scaffoldBackgroundColor,
                         size: 20,
                       ),
                     ),
